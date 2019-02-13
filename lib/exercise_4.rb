@@ -7,42 +7,33 @@ class ScrambledDiary
     @contents
   end
 
-
-
-  def scramble_by_advancing_chars(steps)
-    plain_chars = @contents.chars
-    scrambled_chars = plain_chars.map do |char|
-      (char.ord + steps).chr
-    end
-    @contents = scrambled_chars.join
+  def jumbleatron(your_method_here)
+    chars_in = @contents.chars
+    chars_out = your_method_here(whatever_the_hell_steps_is)
+    @contents = chars_out.join
   end
-
-  def unscramble_by_advancing_chars(steps)
-    scrambled_chars = @contents.chars
-    plain_chars = scrambled_chars.map do |char|
-      (char.ord - steps).chr
-    end
-    @contents = plain_chars.join
-  end
-
-
 
 end
 
 ##############################################
 
 class scramble_by_advance
+  def initialize
 
-  def stuff1
-    (char.ord + steps).chr
+  end
+
+  def stuff1(steps)
+    chars_out = plain_chars.map { |char|
+      (char.ord + steps).chr }
   end
 
 end
 
 class unscramble_by_advance
 
-  def stuff1
-    (char.ord - steps).chr
+  def stuff1(steps)
+    scrambled_chars.map { |char|
+      (char.ord - steps).chr }
   end
 
 end
