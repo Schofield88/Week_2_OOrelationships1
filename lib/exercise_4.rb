@@ -7,6 +7,8 @@ class ScrambledDiary
     @contents
   end
 
+
+
   def scramble_by_advancing_chars(steps)
     plain_chars = @contents.chars
     scrambled_chars = plain_chars.map do |char|
@@ -23,11 +25,32 @@ class ScrambledDiary
     @contents = plain_chars.join
   end
 
-  def scramble_by_reversing
-    @contents = @contents.reverse
+
+
+end
+
+##############################################
+
+class scramble_by_advance
+
+  def stuff1
+    (char.ord + steps).chr
   end
 
-  def unscramble_by_reversing
-    @contents = @contents.reverse
+end
+
+class unscramble_by_advance
+
+  def stuff1
+    (char.ord - steps).chr
   end
+
+end
+
+class reverse
+
+  def stuff1
+  @contents = @contents.reverse
+  end
+
 end
