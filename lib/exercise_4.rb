@@ -1,5 +1,5 @@
 class ScrambledDiary
-  def initialize(contents)
+  def initialize(:contents)
     @contents = contents
   end
 
@@ -7,41 +7,33 @@ class ScrambledDiary
     @contents
   end
 
-  def jumbleatron(your_method_here)
-    chars_in = @contents.chars
-    chars_out = your_method_here(whatever_the_hell_steps_is)
-    @contents = chars_out.join
+  def rejigger(crypt)
+    crypt.do_your_thing(@contents)
   end
 
 end
 
-##############################################
 
-class scramble_by_advance
-  def initialize
+class Scramble_by_advancing_chars
 
+  def initialize(steps)
+    @steps = steps
   end
 
-  def stuff1(steps)
-    chars_out = plain_chars.map { |char|
-      (char.ord + steps).chr }
-  end
-
-end
-
-class unscramble_by_advance
-
-  def stuff1(steps)
-    scrambled_chars.map { |char|
-      (char.ord - steps).chr }
+  def do_your_thing(contents_from_scram)
+    plain_chars = contents_from_scram
+    scrambled_chars = plain_chars.map do |char|
+      (char.ord + @steps).chr
+    end
+    contents_from_scram = scrambled_chars.join
   end
 
 end
 
-class reverse
+class Reverse
 
-  def stuff1
-  @contents = @contents.reverse
+  def do_your_thing(contents_from_scram)
+    contents_from_scram.reverse
   end
-
+      
 end
